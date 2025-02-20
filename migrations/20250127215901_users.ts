@@ -2,10 +2,9 @@ import type { Knex } from "knex";
 import { onUpdateTrigger } from "../src/utils/onUpdateTrigger";
 
 export async function up(knex: Knex): Promise<void> {
-  await knex.raw('create extension "uuid-ossp"');
   return knex.schema
     .createTable("usuarios", function (table) {
-      table.uuid("id").defaultTo(knex.raw("uuid_generate_v4()")).unique();
+      table.increments("id").primary();
       table.string("email", 320).notNullable().index().unique();
       table.string("password", 255).notNullable();
       table.timestamp("created_at").defaultTo(knex.fn.now());
