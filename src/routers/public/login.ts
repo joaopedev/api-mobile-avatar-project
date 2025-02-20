@@ -1,6 +1,6 @@
 import { HTTP_ERRORS } from "../../models/model";
 import createError from "http-errors";
-import { UserLogin } from "../../database/users";
+import { UserLogin } from "../../database/dbUsers";
 import { Application, NextFunction, Request, Response } from "express";
 import { body, validationResult } from "express-validator";
 import jwt from "jsonwebtoken";
