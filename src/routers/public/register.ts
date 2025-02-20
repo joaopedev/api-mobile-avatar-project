@@ -1,7 +1,7 @@
 import { body, validationResult } from "express-validator";
 import { HTTP_ERRORS, UserModel } from "../../models/model";
 import createError from "http-errors";
-import { UserLogin } from "../../database/users";
+import { UserLogin } from "../../database/dbUsers";
 import { Application, NextFunction, Request, Response } from "express";
 import { tratarErro } from "../../utils/error";
 import { encodePassword } from "../../utils/bcrypt";

@@ -1,3 +1,5 @@
+import exp from "constants";
+
 export enum HTTP_ERRORS {
   SUCESSO = 200, // Sucesso na criação do cadastro
   BAD_REQUEST = 400, // Dados inválidos
@@ -21,10 +23,11 @@ export interface UserModel {
   passwordResetExpires?: Date;
   tasks?: TasksModel[];
   avatar?: AvatarModel;
+  level?: number;
 }
 
 export interface TasksModel {
-  id?: string;
+  id?: number;
   title: string;
   description: string;
   user_id: string;
@@ -38,7 +41,25 @@ export interface AvatarModel {
   user_id: string;
   shoes_id: string;
   dresses_id: string;
-  pants_id: string;
+  eyes_color_id: string;
+  image: string;
+  earrings_id: string;
+  hair_id: string;
+}
+
+export interface ClothersAvatarModel {
+  id?: string;
+  name: string;
+  image: string;
+  type: ClothersType;
+}
+
+export enum ClothersType {
+  SHOES = "shoes",
+  DRESSES = "dresses",
+  EYES_COLOR = "eyes_color",
+  EARRINGS = "earrings",
+  HAIR = "hair",
 }
 
 export enum ErrosBDModel {
